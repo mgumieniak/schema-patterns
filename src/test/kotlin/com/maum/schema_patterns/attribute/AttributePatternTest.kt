@@ -1,11 +1,11 @@
 package com.maum.schema_patterns.attribute
 
-import com.maum.schema_patterns.WithRepoTest
+import com.maum.schema_patterns.IntegrationRepoTest
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import java.math.BigDecimal
 
-@WithRepoTest
+@IntegrationRepoTest
 class AttributePatternTest {
 
     @Autowired

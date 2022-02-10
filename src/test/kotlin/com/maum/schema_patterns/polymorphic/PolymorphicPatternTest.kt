@@ -1,15 +1,14 @@
 package com.maum.schema_patterns.polymorphic
 
-import com.maum.schema_patterns.WithRepoTest
+import com.maum.schema_patterns.IntegrationRepoTest
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
-import reactor.kotlin.core.publisher.toMono
 import java.math.BigDecimal
 
 private const val AUTHOR = "Maciej"
 
-@WithRepoTest
+@IntegrationRepoTest
 class PolymorphicPatternTest {
 
     @Autowired

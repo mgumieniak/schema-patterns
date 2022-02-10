@@ -15,18 +15,19 @@ _When use:_
 _Sample use:_
 
 * Products
+
 ---
 **Attribute Pattern**
 
-Provides for easier indexing the documents, targeting many similar fields per document. By moving
-this subset of data into a **key-value sub-document**, we can use non-deterministic field names, add additional qualifiers
-to the information, and more clearly state the relationship of the original field and value. When we use the Attribute
-Pattern, we need fewer indexes, our queries become simpler to write, and our queries become faster.
+Provides for easier indexing the documents, targeting many similar fields per document. By moving this subset of data
+into a **key-value sub-document**, we can use non-deterministic field names, add additional qualifiers to the
+information, and more clearly state the relationship of the original field and value. When we use the Attribute Pattern,
+we need fewer indexes, our queries become simpler to write, and our queries become faster.
 
 _Why use:_
 
 * Easier indexing the documents, targeting many similar fields per document.
- 
+
 _When use:_
 
 * We have big documents with many similar fields which means the same but in different units (bottle units) or describe
@@ -38,3 +39,26 @@ _Sample use:_
 Products:  clothing, may have sizes that are expressed in small, medium, or large. Other products in the same collection
 may be expressed in volume. Yet others may be expressed in physical dimensions or weight.
 
+---
+**Bucket Pattern**
+
+This pattern is particularly effective when working with Internet of Things (IoT), Real-Time Analytics, or Time-Series
+data in general. By bucketing data together we make it easier to organize specific groups of data, increasing the
+ability to discover historical trends or provide future forecasting and optimize our use of storage.
+
+It's vital to find a compromise in **bucket size**. If we set size 50, then front can only query 50 measurements and show
+client required measurements. The repository don't need to offer getting less than minimal bucket size.
+
+_Why use:_
+
+* reduce storage space
+* index size savings,
+* ability to use **pre-aggregated data** in our documents
+
+_When use:_
+
+* IoT, Real-Time Analytics, or Time-Series data in general
+
+_Sample use:_
+
+* Temperature measurements
