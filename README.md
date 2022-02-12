@@ -46,8 +46,8 @@ This pattern is particularly effective when working with Internet of Things (IoT
 data in general. By bucketing data together we make it easier to organize specific groups of data, increasing the
 ability to discover historical trends or provide future forecasting and optimize our use of storage.
 
-It's vital to find a compromise in **bucket size**. If we set size 50, then front can only query 50 measurements and show
-client required measurements. The repository don't need to offer getting less than minimal bucket size.
+It's vital to find a compromise in **bucket size**. If we set size 50, then front can only query 50 measurements and
+show client required measurements. The repository don't need to offer getting less than minimal bucket size.
 
 _Why use:_
 
@@ -62,3 +62,22 @@ _When use:_
 _Sample use:_
 
 * Temperature measurements
+
+---
+**Outlier Pattern**
+
+Tailoring your schema for the typical document or query, application performance will be optimized for those normal use
+cases and the outliers will still be addressed.
+
+It's possible to store outliers' data in separate collection .
+
+_Why use:_
+
+* Preventing **a few** documents or queries to determine an application's solution. Especially when that solution would
+  not **be optimal for the majority** of use cases.
+
+_When use:_
+* Aa few documents which have to be handled different
+ 
+_Sample use:_
+* Books, movies: handling IT books vs LOTR book
