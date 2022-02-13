@@ -13,4 +13,3 @@ interface SensorRepo : ReactiveMongoRepository<Sensor, String> {
 
     fun findBySensorId(sensorId: String): Flux<Sensor>
 }
-//{ 'sensorId' : ?0 }, { 'endDate' : { $gte :  ?1 } }

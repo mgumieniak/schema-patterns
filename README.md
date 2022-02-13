@@ -1,4 +1,4 @@
-**Polymorphic pattern**
+**The Polymorphic pattern**
 
 The data stored about each comment does not need to be the same even though the documents are in the same collection.
 
@@ -17,7 +17,7 @@ _Sample use:_
 * Products
 
 ---
-**Attribute Pattern**
+**The Attribute Pattern**
 
 Provides for easier indexing the documents, targeting many similar fields per document. By moving this subset of data
 into a **key-value sub-document**, we can use non-deterministic field names, add additional qualifiers to the
@@ -40,7 +40,7 @@ Products:  clothing, may have sizes that are expressed in small, medium, or larg
 may be expressed in volume. Yet others may be expressed in physical dimensions or weight.
 
 ---
-**Bucket Pattern**
+**The Bucket Pattern**
 
 This pattern is particularly effective when working with Internet of Things (IoT), Real-Time Analytics, or Time-Series
 data in general. By bucketing data together we make it easier to organize specific groups of data, increasing the
@@ -64,7 +64,7 @@ _Sample use:_
 * Temperature measurements
 
 ---
-**Outlier Pattern**
+**The Outlier Pattern**
 
 Tailoring your schema for the typical document or query, application performance will be optimized for those normal use
 cases and the outliers will still be addressed.
@@ -81,3 +81,17 @@ _When use:_
  
 _Sample use:_
 * Books, movies: handling IT books vs LOTR book
+
+---
+**The Computed Pattern**
+
+Storing data which are computed repeatedly during read.
+
+_When use:_
+* Performing the same calculations repeatedly and you have a high read to write ratio
+
+_Sample use:_
+* All kind of data to create ordered lists like the "100 Best..."
+* Datasets that need sums, such as revenue or viewers
+* Time series data, event sourcing
+
