@@ -1,11 +1,13 @@
 package com.maum.schema_patterns.attribute
 
-import com.maum.schema_patterns.IntegrationRepoTest
+import com.maum.schema_patterns.DataMongoTestDecorator
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.data.mongodb.repository.config.EnableReactiveMongoRepositories
 import java.math.BigDecimal
 
-@IntegrationRepoTest
+@DataMongoTestDecorator
+@EnableReactiveMongoRepositories(value = ["com.maum.schema_patterns.attribute"])
 class AttributePatternTest {
 
     @Autowired

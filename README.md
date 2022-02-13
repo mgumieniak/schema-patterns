@@ -77,9 +77,11 @@ _Why use:_
   not **be optimal for the majority** of use cases.
 
 _When use:_
+
 * Aa few documents which have to be handled different
- 
+
 _Sample use:_
+
 * Books, movies: handling IT books vs LOTR book
 
 ---
@@ -88,10 +90,35 @@ _Sample use:_
 Storing data which are computed repeatedly during read.
 
 _When use:_
+
 * Performing the same calculations repeatedly and you have a high read to write ratio
 
 _Sample use:_
+
 * All kind of data to create ordered lists like the "100 Best..."
 * Datasets that need sums, such as revenue or viewers
 * Time series data, event sourcing
+
+---
+**The Subset Pattern**
+
+This pattern addresses the issues associated with a working set that exceeds RAM, resulting in information being removed
+from memory. Use the advantages of the 1-N mapping and reduce the cost of getting subset.
+
+_When use:_
+
+* reduce the size of our working set
+
+_Sample use:_
+
+* e-commerce site that has a list of reviews for a product. In the Product collection, we'll only keep the ten most
+  recent reviews. This allows the working set to be reduced by only bringing in a portion, or subset, of the overall
+  data. The additional information, reviews in this example, are stored in a separate Reviews collection that can be
+  accessed if the user wants to see additional reviews.
+
+**Before**
+![](doc/subset-full-doc.png)
+
+**After**
+![](doc/subset-two-collections.png)
 

@@ -5,4 +5,4 @@ import org.springframework.test.context.ContextConfiguration
 
 @DataMongoTest
 @ContextConfiguration(classes = [MongoTestServerConfiguration::class])
-annotation class IntegrationRepoTest
+annotation class DataMongoTestDecorator
