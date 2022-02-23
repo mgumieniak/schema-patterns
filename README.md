@@ -122,3 +122,34 @@ _Sample use:_
 **After**
 ![](doc/subset-two-collections.png)
 
+---
+**The Extended Reference Pattern**
+
+The Extended Reference pattern is a wonderful solution when your application is experiencing many repetitive JOIN
+operations.
+
+There are times when having separate collections for data make sense. If an entity can be thought of as a separate "
+thing", it often makes sense to have a separate collection. For example, in an e-commerce application, the idea of an
+order exists, as does a customer, and inventory. They are separate logical entities.
+![](doc/extended_ref_before.png)
+
+From a performance standpoint, however, this becomes problematic as we need to put the pieces of information together
+for a specific order.
+
+1 customer <--> N orders   
+N orders  <--> 1 customer
+
+![](doc/extended_ref_after.png)
+
+After moving shipping_address to order collection. We can query needed data without expensive lookup.
+
+_When use:_
+
+* reduce JOIN operation by copying some data to another collection. The copied data should be **immutable** (avoid
+  multiple updates in more than one collection).
+
+  When information is updated, we need to think about how to handle that as well. What extended references changed? When
+  should those be updated?
+
+_Sample use:_
+* collections with join
