@@ -163,7 +163,8 @@ time, memory, CPU cycles) to calculate and for when **precision isn't of the hig
 distribution precision can be calculated.
 
 Precision tips:
-* more frequent operation => more precision result 
+
+* more frequent operation => more precision result
 * more clients => less precision result
 
 _When use:_
@@ -175,3 +176,23 @@ _When use:_
 _Sample use:_
 
 * Fluid data as city population, which exact number is not crucial as fast response
+
+---
+**The Tree Pattern**
+
+The pattern allows replacing expensive multiple joins with hierarchical **static** **duplicated** data. Find performance
+can be increased by adding an index on the _reports_to_ field.
+
+_When use:_
+
+* Data **should be static** and hierarchical.
+
+Hierarchical data:
+![](doc/tree_data.png)
+
+After applying the Tree Pattern:
+![](doc/tree_pattern.png)
+
+_Sample use:_
+
+* Identify the reporting chain from an employee to the CEO.
