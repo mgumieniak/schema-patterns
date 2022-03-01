@@ -152,4 +152,26 @@ _When use:_
   should those be updated?
 
 _Sample use:_
+
 * collections with join
+
+---
+**The Approximation Pattern**
+
+We can use the Approximation Pattern when we need to display **calculations that are challenging/expensive** (
+time, memory, CPU cycles) to calculate and for when **precision isn't of the highest priority**. Thanks to Gaussian
+distribution precision can be calculated.
+
+Precision tips:
+* more frequent operation => more precision result 
+* more clients => less precision result
+
+_When use:_
+
+* Calculated value can be replaced by bigger one (multiple increasing value == one bigger increment)
+* Precision isn't the highest priority
+* The cost be to get an exact calculation of that number is high.
+
+_Sample use:_
+
+* Fluid data as city population, which exact number is not crucial as fast response
