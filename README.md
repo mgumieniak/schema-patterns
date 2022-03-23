@@ -196,3 +196,26 @@ After applying the Tree Pattern:
 _Sample use:_
 
 * Identify the reporting chain from an employee to the CEO.
+
+---
+**The Document Versioning Pattern**
+
+This pattern addresses the problem of **wanting to keep around older revisions** of some documents in MongoDB instead of
+bringing in a second management system. To accomplish this, we add a field to each document allowing us to keep track of
+the document version. The database will then have **two collections**: one that has the latest (most queried data) and
+another that has all the revisions of the data.
+
+_When use:_
+
+* Each **document doesn’t have too many revisions** - ccess a different collectiondocumet 
+* There **aren’t too many documents** to version.
+* **Most** of the queries performed are done on the **most current version** of the document.
+
+After applying The Document Versioning Pattern:
+![](doc/document_versioning_pattern.png)
+There are two documents:
+* *..._revisio*n = historical data
+* _current_..._ = current data
+
+_Sample use:_
+* Use cases required historical data
