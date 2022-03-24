@@ -207,15 +207,31 @@ another that has all the revisions of the data.
 
 _When use:_
 
-* Each **document doesn’t have too many revisions** - ccess a different collectiondocumet 
+* Each **document doesn’t have too many revisions** - ccess a different collectiondocumet
 * There **aren’t too many documents** to version.
 * **Most** of the queries performed are done on the **most current version** of the document.
 
 After applying The Document Versioning Pattern:
 ![](doc/document_versioning_pattern.png)
 There are two documents:
+
 * *..._revisio*n = historical data
 * _current_..._ = current data
 
 _Sample use:_
+
 * Use cases required historical data
+
+---
+***The Schema Versioning Pattern***
+
+The pattern allows versioning schema
+
+Before pattern:
+![](doc/schema_version_before.png)
+
+After pattern:
+![](doc/schema_version_after.png)
+
+_When use:_
+* updating the documents may take hours - isn't possible
